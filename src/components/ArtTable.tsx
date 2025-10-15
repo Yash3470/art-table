@@ -34,7 +34,7 @@ const ArtTable: React.FC = () => {
   const toast = useRef<Toast>(null);
   const overlayRef = useRef<OverlayPanel>(null);
 
-  // Fetch artworks for the current page
+  // Fetch
   const fetchArtworks = async (pageNumber: number) => {
     setLoading(true);
     try {
@@ -51,7 +51,6 @@ const ArtTable: React.FC = () => {
     }
   };
 
-  // Fetch all artworks progressively until enough unique rows are fetched
   const fetchAllArtworks = async (maxNeeded: number) => {
     setOverlayLoading(true);
     const fetched: Artwork[] = [];
@@ -98,10 +97,10 @@ const ArtTable: React.FC = () => {
     const newSelection = e.value;
     const updatedPersisted = { ...persistedSelection };
 
-    // Remove current page rows first
+  
     artworks.forEach((art) => delete updatedPersisted[art.id]);
 
-    // Add new selections
+   
     newSelection.forEach((art) => {
       updatedPersisted[art.id] = art;
     });
@@ -127,7 +126,6 @@ const ArtTable: React.FC = () => {
     });
   };
 
-  // ✅ Select N rows globally
   const handleSelectCount = async () => {
     if (selectCount <= 0) {
       toast.current?.show({
@@ -162,7 +160,7 @@ const ArtTable: React.FC = () => {
     });
   };
 
-  // Overlay beside Title
+
   const titleHeaderTemplate = () => (
     <div className="flex align-items-center gap-2">
       <span>Title</span>
