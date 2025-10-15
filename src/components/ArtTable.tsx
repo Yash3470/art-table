@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import { DataTable, DataTablePageEvent } from "primereact/datatable";
+import { DataTable } from "primereact/datatable";
+import type { DataTablePageEvent } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Toast } from "primereact/toast";
 import { Button } from "primereact/button";
